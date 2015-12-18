@@ -21,3 +21,6 @@ gradle.properties
 .project
 .settings
 .classpath
+
+!gradle-wrapper.jar
+
