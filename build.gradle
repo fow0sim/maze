@@ -1,0 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+version = '0.3.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Solve maze puzzle from Anke\'s calendar.',
+                   'Implementation-Version': version,
+                   'Main-Class': 'eu.simmig.maze.MazeController'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.9'
+}
